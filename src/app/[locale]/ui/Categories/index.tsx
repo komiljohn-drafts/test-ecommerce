@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 
 import { SectionTitle1, SectionTitle2 } from "@/components/SectionTitles";
@@ -17,6 +16,7 @@ export default function Categories() {
     <section className="container mx-auto px-4 pb-[60px]">
       <SectionTitle2 className="mb-3">Categories</SectionTitle2>
       <SectionTitle1 className="mb-[60px]">Browse By Category</SectionTitle1>
+
       <Carousel
         opts={{
           align: "start",
@@ -29,11 +29,11 @@ export default function Categories() {
               <div className="p-px">
                 <div
                   className={cn(
-                    "flex flex-col items-center justify-center py-[25px] rounded-sm border border-[#0000004D] stroke-white",
-                    activeIdx === index && "bg-secondary2Red border-transparent text-white stroke-white fill-white"
+                    "cursor-pointer flex flex-col items-center justify-center py-[25px] rounded-sm border border-[#0000004D] stroke-white",
+                    activeIdx === index ? "bg-secondary2Red border-transparent text-white" : "hover:border-gray-600"
                   )}
                 >
-                  <Image src={item.iconUrl} width={56} height={56} className="mb-4" alt="phone category" />
+                  {item.icon}
                   <p>{item.text}</p>
                 </div>
               </div>

@@ -1,35 +1,42 @@
+import CameraSvg from "./icons/camera";
+import ComputerSvg from "./icons/computer";
+import GamingSvg from "./icons/gaming";
+import HeadphonesSvg from "./icons/headphones";
+import PhoneSvg from "./icons/PhoneSvg";
+import SmartWatchSvg from "./icons/smart-watch";
+
 interface ICategory {
-  iconUrl: string;
+  icon: JSX.Element;
   text: string;
 }
 
 const categories: ICategory[] = [
   {
-    iconUrl: "/icons/phone.svg",
+    icon: <PhoneSvg />,
     text: "Phones",
   },
   {
-    iconUrl: "/icons/computer.svg",
+    icon: <ComputerSvg />,
     text: "Computers",
   },
   {
-    iconUrl: "/icons/smart-watch.svg",
+    icon: <SmartWatchSvg />,
     text: "SmartWatch",
   },
   {
-    iconUrl: "/icons/camera.svg",
+    icon: <CameraSvg />,
     text: "Camera",
   },
   {
-    iconUrl: "/icons/headphones.svg",
+    icon: <HeadphonesSvg />,
     text: "HeadPhones",
   },
   {
-    iconUrl: "/icons/gaming.svg",
+    icon: <GamingSvg />,
     text: "Gaming",
   },
   {
-    iconUrl: "/icons/phone.svg",
+    icon: <PhoneSvg />,
     text: "Phones",
   },
 ];

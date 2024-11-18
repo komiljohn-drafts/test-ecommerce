@@ -8,21 +8,31 @@ export default withNextIntl({
     appIsrStatus: false,
   },
   webpack(config) {
-    // Find and modify the existing rule for .svg
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"));
+    // Remove the existing rule for SVG files if it exists
+    config.module.rules = config.module.rules.filter((rule) => {
+      return !rule.test || !rule.test.test(".svg");
+    });
 
-    if (fileLoaderRule) {
-      fileLoaderRule.exclude = /\.svg$/;
-    }
-
-    // Add @svgr/webpack loader for .svg files
+    // Add the rule for handling SVG files with @svgr/webpack
     config.module.rules.push({
       test: /\.svg$/,
       use: [
         {
           loader: "@svgr/webpack",
           options: {
-            svgo: true, // Optimize SVGs
+            prettier: false,
+            svgo: true,
+            svgoConfig: {
+              plugins: [
+                {
+                  name: "preset-default",
+                  params: {
+                    overrides: { removeViewBox: false },
+                  },
+                },
+              ],
+            },
+            titleProp: true,
           },
         },
       ],
