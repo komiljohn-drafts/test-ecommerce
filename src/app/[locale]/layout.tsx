@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import BaseLayout from "@/components/layouts/BaseLayout";
 import { routing } from "@/i18n/routing";
 
+import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default async function RootLayout({ params }: Readonly<RootLayoutProps>) 
   return (
     <BaseLayout locale={locale}>
       <Header />
+      <Footer />
     </BaseLayout>
   );
 }
