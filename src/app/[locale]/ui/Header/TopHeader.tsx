@@ -12,7 +12,7 @@ export default function TopHeader() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <span />
         <div className="flex gap-2 items-center">
-          <p className="text-sm leading-[18px]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+          <p className="text-sm leading-[18px]">{t("text")}</p>
           <Link className="text-sm leading-6 font-semibold underline hover:no-underline" href="/shop">
             {t("buttonText")}
           </Link>
