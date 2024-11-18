@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
+import Footer from "@/app/[locale]/ui/Footer/Footer";
+import Header from "@/app/[locale]/ui/Header/Header";
 import { routing } from "@/i18n/routing";
 
 const poppinsRegular = localFont({
@@ -36,7 +38,9 @@ export default async function BaseLayout({ locale, children }: Readonly<RootLayo
     <html lang={locale} suppressHydrationWarning>
       <body className={`${poppinsRegular.className}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

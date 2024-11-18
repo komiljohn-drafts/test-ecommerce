@@ -7,9 +7,6 @@ import { ReactNode } from "react";
 import BaseLayout from "@/components/layouts/BaseLayout";
 import { routing } from "@/i18n/routing";
 
-import Footer from "./ui/Footer/Footer";
-import Header from "./ui/Header/Header";
-
 export const metadata: Metadata = {
   title: "E-commerce",
   description: "Test task",
@@ -30,11 +27,5 @@ export default async function RootLayout({ children, params }: Readonly<RootLayo
     notFound();
   }
 
-  return (
-    <BaseLayout locale={locale}>
-      <Header />
-      {children}
-      <Footer />
-    </BaseLayout>
-  );
+  return <BaseLayout locale={locale}>{children}</BaseLayout>;
 }
