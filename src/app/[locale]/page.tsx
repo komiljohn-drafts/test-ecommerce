@@ -1,9 +1,20 @@
-import TopHeader from "./ui/TopHeader";
+import Banner from "@/app/[locale]/ui/Banner";
+import BestSelling from "@/app/[locale]/ui/BestSelling";
+import Explore from "@/app/[locale]/ui/Explore";
+
+import Categories from "./ui/Categories";
+import Featured from "./ui/Featured";
+import Todays from "./ui/Todays";
 
 export default function Home() {
   return (
     <header>
-      <TopHeader />
+      <Banner />
+      <Todays />
+      <Categories />
+      <BestSelling />
+      <Explore />
+      <Featured />
     </header>
   );
 }

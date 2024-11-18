@@ -34,7 +34,7 @@ export default async function BaseLayout({ locale, children }: Readonly<RootLayo
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${poppinsRegular.className} antialiased`}>
+      <body className={`${poppinsRegular.className}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

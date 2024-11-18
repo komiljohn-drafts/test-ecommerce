@@ -2,12 +2,13 @@ import "../globals.css";
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ReactNode } from "react";
 
 import BaseLayout from "@/components/layouts/BaseLayout";
 import { routing } from "@/i18n/routing";
 
-import Footer from "./ui/Footer";
-import Header from "./ui/Header";
+import Footer from "./ui/Footer/Footer";
+import Header from "./ui/Header/Header";
 
 export const metadata: Metadata = {
   title: "E-commerce",
@@ -18,9 +19,10 @@ interface RootLayoutProps {
   params: Promise<{
     locale: string;
   }>;
+  children: ReactNode;
 }
 
-export default async function RootLayout({ params }: Readonly<RootLayoutProps>) {
+export default async function RootLayout({ children, params }: Readonly<RootLayoutProps>) {
   const { locale } = await params;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -31,6 +33,7 @@ export default async function RootLayout({ params }: Readonly<RootLayoutProps>) 
   return (
     <BaseLayout locale={locale}>
       <Header />
+      {children}
       <Footer />
     </BaseLayout>
   );
